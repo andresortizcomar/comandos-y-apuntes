@@ -9,9 +9,13 @@ git config --global user.name "Andrés Ortiz"
 git config --global user.email "andresortiz.com.ar@gmail.com"
 ```
 # Alias recomendado para ver el historial visualmente
+
+```bash
 git config --global alias.adog "log --all --decorate --oneline --graph"
+```
 
 ## 2. Preparando un Proyecto Nuevo
+
 1. Si tienes código suelto y quieres profesionalizarlo:
 
 2. Inicializar: git init
@@ -20,14 +24,49 @@ git config --global alias.adog "log --all --decorate --oneline --graph"
 
 ### Primer guardado:
 
-'git add .'
-'git commit -m "feat: inicializar estructura del proyecto"'
-
+```bash
+git add .
+git commit -m "feat: inicializar estructura del proyecto"
+```
 4. Conectar a la nube:
 
-'git remote add origin [https://github.com/usuario/repositorio.git](https://github.com/usuario/repositorio.git)'
-'git branch -M main'
-'git push -u origin main'
+#### Depreciado
+bash
+git remote add origin [https://github.com/usuario/repositorio.git](https://github.com/usuario/repositorio.git)
+
+### Correcto
+
+Se debe crear una llave SSH para poder conectar local con github
+
+1. Genera la llave (solo dale a Enter a todo cuando pregunte):
+
+```bash
+ssh-keygen -t ed25519 -C "tu@email.com"
+```
+
+2. Copia la llave pública generada:
+Copia todo el texto que empieza con ssh-ed25519...)
+
+```bash
+cat ~/.ssh/id_ed25519.pub
+```
+3. Pégala en GitHub:
+
+* Ve a GitHub → Settings (tu foto arriba a la derecha) → SSH and GPG keys.
+* Click en New SSH key, ponle un nombre (ej: "Mi Notebook") y pega el código.
+
+4. Cambia el "remoto" de tu proyecto a SSH:
+
+```bash
+git remote set-url origin git@github.com:tu-usuario/comandos-y-apuntes.git
+```
+
+5. Ejecutar el push:
+
+```bash
+git branch -M main
+git push -u origin main
+```
 
 ## 3. Flujo Diario (Ramas de Trabajo)
 
@@ -35,19 +74,25 @@ Regla de oro: Nunca trabajes directamente sobre main.
 
 ### Paso A: Crear una rama para la tarea
 
-'git checkout -b feature/nombre-de-la-mejora'
+```bash
+git checkout -b feature/nombre-de-la-mejora
+```
 
 ### Paso B: Ciclo de cambios (Commits Atómicos)
 Haz cambios pequeños y lógicos.
 
-'git status'                    # Revisa qué cambió
-'git diff'                      # Mira los cambios línea por línea
+```bash
+git status                    # Revisa qué cambió
+git diff                      # Mira los cambios línea por línea
 'git add <archivo>'             # Prepara el archivo
 'git commit -m "fix: mensaje"'  # Guarda con un mensaje descriptivo
+```
 
 ### Paso C: Sincronizar con la nube (Backup)
 
-'git push origin feature/nombre-de-la-mejora'
+```bash
+git push origin feature/nombre-de-la-mejora
+```
 
 ## 4. Finalizar y Fusionar (Merge)
 
@@ -55,19 +100,27 @@ Cuando tu tarea en la rama feature está lista y probada:
 
 Volver a la rama principal: 
 
-'git checkout main'
+```bash
+git checkout main
+```
 
 Actualizar local: 
 
-'git pull origin main' (Por si hay cambios de otra PC)
+```bash
+git pull origin main #(Por si hay cambios de otra PC)
+```
 
 Fusionar cambios: 
 
-'git merge feature/nombre-de-la-mejora'
+```bash
+git merge feature/nombre-de-la-mejora
+```
 
 Subir cambios: 
 
-'git push origin main'
+```bash
+git push origin main
+```
 
 ## 5. Glosario de Mensajes (Conventional Commits)
 Usa estos prefijos para que tu historial sea legible:
@@ -86,17 +139,26 @@ Limpiar:
 SituaciónComando
 ¿Qué hice? (Historial visual): 
 
-'git adog' (si configuraste el alias)
+```bash
+git adog' (si configuraste el alias)
+```
 
 Me equivoqué en el mensaje del último commit
 
-'git commit --amend -m "nuevo mensaje"'
+```bash
+git commit --amend -m "nuevo mensaje"
+```
 
 Arruiné un archivo y quiero volver al último commit:
 
-'git checkout -- nombre_archivo'
+```bash
+git checkout -- nombre_archivo
+```
 
 Quiero deshacer el último commit (manteniendo los archivos):
 
-'git reset --soft HEAD~1'
+```bash
+git reset --soft HEAD~1
+```
+
 
