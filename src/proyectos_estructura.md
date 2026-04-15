@@ -1,5 +1,5 @@
 # Estructura Ideal de Proyecto
-
+***
 nombre-del-proyecto/
 ├── 📁 .git/                # (Invisible) El corazón de Git
 ├── 📁 src/                 # Código fuente original (el que tú escribes)
@@ -11,7 +11,7 @@ nombre-del-proyecto/
 ├── 📄 .gitignore           # Lista de archivos que Git debe ignorar
 ├── 📄 README.md            # La cara del proyecto (instrucciones y qué es)
 └── 📄 package.json/main.py # Archivos de configuración de dependencias
-
+***
 ## 1. El Directorio src/ (Source)
 Es la regla de oro. No dejes tus archivos .js, .py o .html en la raíz. Meterlos en src/ separa la configuración (archivos de la raíz) de la lógica (lo que está en src).
 

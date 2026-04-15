@@ -7,7 +7,7 @@ Antes de empezar, asegúrate de que tus commits tengan tu firma:
 ```bash
 git config --global user.name "Andrés Ortiz"
 git config --global user.email "andresortiz.com.ar@gmail.com"
-
+```
 # Alias recomendado para ver el historial visualmente
 git config --global alias.adog "log --all --decorate --oneline --graph"
 
