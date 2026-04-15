@@ -1,0 +1,4 @@
+# (Esto evita que se suban archivos temporales del sistema)
+echo ".DS_Store" >> .gitignore
+echo "thumbs.db" >> .gitignore
+echo ".env" >> .gitignore
