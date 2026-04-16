@@ -2,15 +2,25 @@
 ***
 nombre-del-proyecto/
 ├── 📁 .git/                # (Invisible) El corazón de Git
+
 ├── 📁 src/                 # Código fuente original (el que tú escribes)
+
 ├── 📁 assets/              # Recursos estáticos (imágenes, fuentes, iconos)
+
 ├── 📁 docs/                # Documentación, diagramas o notas de investigación
+
 ├── 📁 tests/               # Scripts de prueba (si los usas)
+
 ├── 📁 build/               # (Opcional) Archivos compilados o listos para subir
+
 ├── 📄 .env                 # Variables sensibles (¡NUNCA SE SUBE!)
+
 ├── 📄 .gitignore           # Lista de archivos que Git debe ignorar
+
 ├── 📄 README.md            # La cara del proyecto (instrucciones y qué es)
+
 └── 📄 package.json/main.py # Archivos de configuración de dependencias
+
 ***
 ## 1. El Directorio src/ (Source)
 Es la regla de oro. No dejes tus archivos .js, .py o .html en la raíz. Meterlos en src/ separa la configuración (archivos de la raíz) de la lógica (lo que está en src).
