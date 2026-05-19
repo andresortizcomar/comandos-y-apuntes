@@ -107,14 +107,33 @@ ollama rm llama3.2:3b
 Modelo	Tamaño	RAM necesaria	Uso recomendado
 
 llama3.2:3b		3GB	~4GB	Rápido, inglés
+
 llama3.1:8b		8GB	~12GB	Calidad, inglés/español
+
 mistral:7b		7GB	~10GB	Rendimiento balanceado
+
 phi3:3.8b		3.8GB	~5GB	Muy rápido, código
+
 gemma2:9b		9GB	~12GB	Calidad Google
+
 deepseek-coder:6.7b	6.7GB	~9GB	Programación
 
 #### Otros modelos
 qwen2.5-coder:1.5b	el campeón de los modelos pequeños
+
 phi3.5			de Microsoft entrenado con datos de alta calidad
+
 qwen2.5-coder:7b	Superior a otros en su clase. Equilibrio velocidad/cerebro
+
 deepseek-coder-v2:16b	Proyectos grandes y complejos
+
+### Modelos para mi stack en VsCode+Ollama (2026-05-19)
+```
+ollama pull qwen2.5-coder:3b
+
+ollama pull qwen2.5-coder:1.5b
+
+ollama pull qwen2.5-coder:1.5b-base
+
+ollama pull nomic-embed-text:latest
+```
